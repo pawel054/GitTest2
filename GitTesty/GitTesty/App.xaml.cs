@@ -10,7 +10,7 @@ namespace GitTesty
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ManageProduct();
         }
 
         protected override void OnStart()
