@@ -34,16 +34,16 @@ namespace GitTesty
 
         private void Dodaj_Clicked(object sender,EventArgs e)
         {
-            Navigation.PushAsync(new ManageProduct(wybranyProdukt));
+            Navigation.PushAsync(new ManageProduct(produkty));
         }
         private void Edytuj_Clicked(object sender, EventArgs e)
         {
-            wybranyProdukt = (Produkt)lista.selectedItem;
+            wybranyProdukt = (Produkt)lista.SelectedItem;
             Navigation.PushAsync(new ManageProduct(wybranyProdukt));
         }
         private void Usun_Clicked(object sender,EventArgs e)
         {
-            wybranyProdukt = (Produkt)lista.selectedItem;
+            wybranyProdukt = (Produkt)lista.SelectedItem;
             produkty.Remove(wybranyProdukt);
         }
     }
