@@ -1,24 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GitTesty.MainPage">
+             x:Class="GitTesty.MainPage" NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <StackLayout BackgroundColor="Black">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+                <Button Text="Dodaj" Margin="10,0,0,0" BackgroundColor="Green" TextColor="White" CornerRadius="5" Clicked="Dodaj_Clicked" />
+                <Button Text="Edytuj" Margin="10,0,0,0" BackgroundColor="Blue" TextColor="White" CornerRadius="5" Clicked="Edytuj_Clicked" />
+                <Button Text="Uusń" Margin="10,0,0,0" BackgroundColor="Crimson" TextColor="White" CornerRadius="5" Clicked="Usuń_Clicked" />
+            </StackLayout>
+            <Grid Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Nazwa" FontSize="17" HorizontalTextAlignment="Center" TextColor="White" Grid.Column="0" />
+                <Label Text="Cena" FontSize="17" HorizontalTextAlignment="Center" TextColor="White" Grid.Column="1" />
+                <Label Text="Ilość" FontSize="17" HorizontalTextAlignment="Center" TextColor="White" Grid.Column="2" />
+            </Grid>
+        </StackLayout>
+        <StackLayout>
+            <ListView x:Name="lista" ItemsSource="{Binding Produkt}" SeparatorColor="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Nazwa}" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" />
+                                <Label Text="{Binding Cena, StringFormat='{0:}zł'}" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" />
+                                <Label Text="{Binding Ilosc}" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="2" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </StackLayout>
-
 </ContentPage>
