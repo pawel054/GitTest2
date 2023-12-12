@@ -11,5 +11,6 @@
             <Button x:Name="btnDodaj" Text="Dodaj" BackgroundColor="Green" TextColor="White" CornerRadius="15" Clicked="BtnDodajClicked" HorizontalOptions="Center"/>
             <Button x:Name="btnEdytuj" Text="Dodaj" BackgroundColor="Blue" TextColor="White" CornerRadius="15" IsVisible="False" Clicked="BtnEdytujClicked" HorizontalOptions="Center"/>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
