@@ -84,6 +84,7 @@ namespace GitTesty
             else
             {
                 DisplayAlert("Niepoprawne dane", "Pola nie mogą być puste", "OK");
+
             }
         }
     }
